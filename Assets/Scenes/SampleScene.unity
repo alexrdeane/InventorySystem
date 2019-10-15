@@ -665,7 +665,7 @@ MonoBehaviour:
   scrollPos: {x: 0, y: 0}
   money: 0
   sortType: 
-  dropTransform: {fileID: 0}
+  dropTransform: {fileID: 781560418}
   curWeapon: {fileID: 0}
   curHelm: {fileID: 0}
   equipmentSlots:

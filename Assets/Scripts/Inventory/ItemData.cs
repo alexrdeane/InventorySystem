@@ -27,7 +27,7 @@ public static class ItemData
                 _description = "A hearty mushroom used for cooking with basic ingredients";
                 _amount = 1;
                 _value = 1;
-                _type = ItemType.Inredient;
+                _type = ItemType.Ingredient;
                 _icon = "Ingredients/Mushroom1";
                 _mesh = "Ingredients/Mushroom1";
                 _damage = 0;
@@ -40,7 +40,7 @@ public static class ItemData
                 _description = "Found in caves this mushroom is used to craft posionous foods, death is guaranteed";
                 _amount = 1;
                 _value = 1;
-                _type = ItemType.Inredient;
+                _type = ItemType.Ingredient;
                 _icon = "Ingredients/Mushroom2";
                 _mesh = "Ingredients/Mushroom2";
                 _damage = 0;
@@ -53,7 +53,7 @@ public static class ItemData
                 _description = "Located near witch huts these mushrooms pack a stronger poison effect than cave mushrooms, death is extra guranateed";
                 _amount = 1;
                 _value = 1;
-                _type = ItemType.Inredient;
+                _type = ItemType.Ingredient;
                 _icon = "Ingredients/Mushroom3";
                 _mesh = "Ingredients/Mushroom3";
                 _damage = 0;
@@ -404,7 +404,7 @@ public static class ItemData
                 _description = "default item";
                 _amount = 1;
                 _value = 1;
-                _type = ItemType.Inredient;
+                _type = ItemType.Ingredient;
                 _icon = "Ingredients/Mushroom1";
                 _mesh = "Ingredients/Mushroom1";
                 _damage = 0;

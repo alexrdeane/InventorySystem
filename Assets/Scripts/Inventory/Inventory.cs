@@ -43,9 +43,14 @@ namespace Linear
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKey(KeyCode.I))
             {
                 inv.Add(ItemData.CreateItem(Random.Range(0, 3)));
+            }
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                inv[0].Amount += 1;
+                Debug.Log(inv[0].Amount);
             }
 
             if (Input.GetKeyDown(KeyCode.Tab))
@@ -84,6 +89,8 @@ namespace Linear
                     GUI.DrawTexture(new Rect(4.75f * scr.x, 0.55f * scr.y, 1.5f * scr.x, 1.5f * scr.y), selectedItem.Icon);
                     // GUI.backgroundColor = new Color(1.0f, 1.0f, 1.0f, 0f);
                     GUI.Box(new Rect(4.2f * scr.x, 2.2f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.Description);
+                    GUI.Button(new Rect(6f * scr.x, 3.15f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "Current Amount: "+selectedItem.Amount);
+                    ItemUse(selectedItem.Type);
                 }
                 else
                 {
@@ -118,6 +125,69 @@ namespace Linear
                     }
                 }
                 GUI.EndScrollView();
+            }
+        }
+
+        void ItemUse(ItemType Type)
+        {
+            switch (Type)
+            {
+                case ItemType.Ingredient:
+                    break;
+                case ItemType.Potion:
+                    break;
+                case ItemType.Scroll:
+                    break;
+                case ItemType.Food:
+                    break;
+                case ItemType.Apparel:
+                    break;
+                case ItemType.Weapon:
+                    break;  
+                case ItemType.Resource:
+                    break;
+                case ItemType.Equipment:
+                    break;
+                case ItemType.Armour:
+                    break;
+                case ItemType.QuestItem:
+                    break;
+                case ItemType.Money:
+                    break;
+                case ItemType.Junk:
+                    break;
+                case ItemType.Miscellaneous:
+                    break;
+                default:
+                    break;
+            }
+            if (GUI.Button(new Rect(6f * scr.x, 8f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "Discard"))
+            {
+                for (int i = 0; i < equipmentSlots.Length; i++)
+                {
+                    //check equiped item
+                    if (equipmentSlots[i].curItem != null && selectedItem.ItemMesh.name == equipmentSlots[i].curItem.name)
+                    {
+                        // if deleted
+                        Destroy(equipmentSlots[i].curItem);
+                    }
+                }
+                // sawn in front
+                GameObject droppedItem = Instantiate(selectedItem.ItemMesh, dropTransform.position, Quaternion.identity);
+                droppedItem.name = selectedItem.Name;
+                // just in case
+                droppedItem.AddComponent<Rigidbody>().useGravity = true;
+                //reduce or delete
+                if (selectedItem.Amount > 1)
+                {
+                    selectedItem.Amount--;
+                }
+                else
+                {
+                    inv.Remove(selectedItem);
+                    selectedItem = null;
+                    return;
+                }
             }
         }
     }

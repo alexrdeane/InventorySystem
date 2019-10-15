@@ -95,7 +95,7 @@ public class Item
 }
 public enum ItemType
 {
-    Inredient,
+    Ingredient,
     Potion,
     Scroll,
     Food,
