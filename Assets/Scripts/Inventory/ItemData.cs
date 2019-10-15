@@ -426,8 +426,8 @@ public static class ItemData
             Rarity = _rarity,
             Armour = _armour,
             Mana = _mana,
-            Icon = Resources.Load("Icon/" + _icon) as Texture2D,
-            ItemMesh = Resources.Load("Mesh/" + _mesh) as GameObject,
+            Icon = Resources.Load("Icons/" + _icon) as Texture2D,
+            ItemMesh = Resources.Load("Meshes/" + _mesh) as GameObject,
             Name = _name,
             Description = _description,
             Type = _type
